@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 void main() {
   return runApp(
@@ -13,6 +14,7 @@ void main() {
         '/Epage': (context) => Epage(),
         '/Fpage': (context) => Fpage(),
         '/Gpage': (context) => Gpage(),
+        '/Hpage': (context) => Hpage(),
       },
       // routes: <String, WidgetBuilder>{'/Cpage': (context) => Cpage()},
       home: Scaffold(
@@ -35,6 +37,11 @@ class _DicePageState extends State<DicePage> {
     setState(() {
       leftDiceNumber = Random().nextInt(10) + 1;
     });
+  }
+
+  void playSound() {
+    final player = AudioCache();
+    player.play('note1.wav');
   }
 
   @override
@@ -77,6 +84,7 @@ class _DicePageState extends State<DicePage> {
                   // splashColor: Colors.redAccent,
                   onPressed: () {
                     Navigator.pushNamed(context, '/Bpage');
+                    playSound();
                   },
                   child: Text(
                     'NEXT',
@@ -109,6 +117,7 @@ class _DicePageState extends State<DicePage> {
                 ),
                 onPressed: () {
                   changeDiceFace();
+                  playSound();
                 },
                 child: Text(
                   'CLICK',
@@ -155,6 +164,11 @@ class _BpageState extends State<Bpage> {
     });
   }
 
+  void playSound() {
+    final player = AudioCache();
+    player.play('note1.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -197,6 +211,7 @@ class _BpageState extends State<Bpage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/home');
                     },
                     child: Text(
@@ -221,6 +236,7 @@ class _BpageState extends State<Bpage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Cpage');
                     },
                     child: Text(
@@ -255,6 +271,7 @@ class _BpageState extends State<Bpage> {
                 borderRadius: BorderRadius.circular(30),
               ),
               onPressed: () {
+                playSound();
                 changeDiceFace();
               },
               child: Text(
@@ -301,6 +318,11 @@ class _CpageState extends State<Cpage> {
     });
   }
 
+  void playSound() {
+    final player = AudioCache();
+    player.play('note1.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -343,6 +365,7 @@ class _CpageState extends State<Cpage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Bpage');
                     },
                     child: Text(
@@ -367,6 +390,7 @@ class _CpageState extends State<Cpage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Dpage');
                     },
                     child: Text(
@@ -401,6 +425,7 @@ class _CpageState extends State<Cpage> {
                 borderRadius: BorderRadius.circular(30),
               ),
               onPressed: () {
+                playSound();
                 changeDiceFace();
               },
               child: Text(
@@ -447,6 +472,11 @@ class _DpageState extends State<Dpage> {
     });
   }
 
+  void playSound() {
+    final player = AudioCache();
+    player.play('note1.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -489,6 +519,7 @@ class _DpageState extends State<Dpage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Cpage');
                     },
                     child: Text(
@@ -513,6 +544,7 @@ class _DpageState extends State<Dpage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Epage');
                     },
                     child: Text(
@@ -547,6 +579,7 @@ class _DpageState extends State<Dpage> {
                 borderRadius: BorderRadius.circular(30),
               ),
               onPressed: () {
+                playSound();
                 changeDiceFace();
               },
               child: Text(
@@ -593,6 +626,11 @@ class _EpageState extends State<Epage> {
     });
   }
 
+  void playSound() {
+    final player = AudioCache();
+    player.play('note1.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -635,6 +673,7 @@ class _EpageState extends State<Epage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Dpage');
                     },
                     child: Text(
@@ -659,6 +698,7 @@ class _EpageState extends State<Epage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Fpage');
                     },
                     child: Text(
@@ -693,6 +733,7 @@ class _EpageState extends State<Epage> {
                 borderRadius: BorderRadius.circular(30),
               ),
               onPressed: () {
+                playSound();
                 changeDiceFace();
               },
               child: Text(
@@ -737,6 +778,11 @@ class _FpageState extends State<Fpage> {
     setState(() {
       leftDiceNumber = Random().nextInt(10) + 1;
     });
+  }
+
+  void playSound() {
+    final player = AudioCache();
+    player.play('note1.wav');
   }
 
   @override
@@ -805,6 +851,7 @@ class _FpageState extends State<Fpage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Gpage');
                     },
                     child: Text(
@@ -839,6 +886,7 @@ class _FpageState extends State<Fpage> {
                 borderRadius: BorderRadius.circular(30),
               ),
               onPressed: () {
+                playSound();
                 changeDiceFace();
               },
               child: Text(
@@ -885,6 +933,11 @@ class _GpageState extends State<Gpage> {
     });
   }
 
+  void playSound() {
+    final player = AudioCache();
+    player.play('note1.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -927,6 +980,7 @@ class _GpageState extends State<Gpage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Fpage');
                     },
                     child: Text(
@@ -951,6 +1005,7 @@ class _GpageState extends State<Gpage> {
 
                     // splashColor: Colors.redAccent,
                     onPressed: () {
+                      playSound();
                       Navigator.pushNamed(context, '/Hpage');
                     },
                     child: Text(
@@ -985,6 +1040,161 @@ class _GpageState extends State<Gpage> {
                 borderRadius: BorderRadius.circular(30),
               ),
               onPressed: () {
+                playSound();
+                changeDiceFace();
+              },
+              child: Text(
+                'CLICK',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ! H PAGE
+
+void mainH() {
+  return runApp(
+    MaterialApp(
+      //routes: <String, WidgetBuilder>{'/Cpage': (context) => Cpage()},
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey[100],
+        body: Hpage(),
+      ),
+    ),
+  );
+}
+
+class Hpage extends StatefulWidget {
+  Hpage({Key key}) : super(key: key);
+
+  @override
+  _HpageState createState() => _HpageState();
+}
+
+class _HpageState extends State<Hpage> {
+  int leftDiceNumber = 1;
+  void changeDiceFace() {
+    setState(() {
+      leftDiceNumber = Random().nextInt(10) + 1;
+    });
+  }
+
+  void playSound() {
+    final player = AudioCache();
+    player.play('note1.wav');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blueGrey[100],
+      body: Container(
+        margin: EdgeInsets.fromLTRB(20, 10, 0, 50),
+        // color: Colors.white,
+        child: Column(
+          children: [
+            Text(
+              'H',
+              style: TextStyle(
+                  color: Colors.deepPurple[900],
+                  fontSize: 150.0,
+                  fontWeight: FontWeight.bold,
+                  // backgroundColor: Colors.amber,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 15.0,
+                      color: Colors.black,
+                      offset: Offset(7.0, 8.0),
+                    ),
+                  ]),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                RaisedButton(
+                    color: Colors.red,
+                    textColor: Colors.white,
+                    padding: EdgeInsets.only(
+                        top: 5.0, bottom: 5, left: 20, right: 20),
+                    highlightColor: Colors.yellow[600],
+                    // elevation: 8,
+                    highlightElevation: 8,
+                    animationDuration: Duration(milliseconds: 2000),
+                    shape: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+
+                    // splashColor: Colors.redAccent,
+                    onPressed: () {
+                      playSound();
+                      Navigator.pushNamed(context, '/Gpage');
+                    },
+                    child: Text(
+                      'BACK',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                RaisedButton(
+                    color: Colors.red,
+                    textColor: Colors.white,
+                    padding: EdgeInsets.only(
+                        top: 5.0, bottom: 5, left: 20, right: 20),
+                    highlightColor: Colors.yellow[600],
+                    // elevation: 8,
+                    highlightElevation: 8,
+                    animationDuration: Duration(milliseconds: 2000),
+                    shape: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+
+                    // splashColor: Colors.redAccent,
+                    onPressed: () {
+                      playSound();
+                      Navigator.pushNamed(context, '/Ipage');
+                    },
+                    child: Text(
+                      'NEXT',
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+              ],
+            ),
+            Expanded(
+              child: Image.asset(
+                'images/g$leftDiceNumber.gif',
+                height: 120,
+                width: 220,
+                // color: Colors.white,
+                colorBlendMode: BlendMode.darken,
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+            RaisedButton(
+              color: Colors.red,
+              textColor: Colors.white,
+              padding:
+                  EdgeInsets.only(top: 5.0, bottom: 5, left: 20, right: 20),
+              highlightColor: Colors.yellow[600],
+              elevation: 8,
+              highlightElevation: 8,
+              animationDuration: Duration(milliseconds: 2000),
+              shape: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              onPressed: () {
+                playSound();
                 changeDiceFace();
               },
               child: Text(
